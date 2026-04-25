@@ -6,61 +6,46 @@
     <title>LUNXET MART</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --main: #cdef2e; --bg: #f8f8f8; --dark: #111; --sale: #ff4747; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--dark); padding-bottom: 70px; overflow-x: hidden; }
+        :root { --main: #cdef2e; --bg: #f8f8f8; --dark: #111; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--dark); padding-bottom: 70px; }
         
-        /* HEADER & NAVIGATION */
+        /* HEADER */
         header { background: #000; color: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000; }
         .header-right { display: flex; align-items: center; gap: 18px; }
-        .icon-btn { font-size: 20px; color: #fff; cursor: pointer; position: relative; transition: 0.2s; }
-        .icon-btn:hover { color: var(--main); }
+        .icon-btn { font-size: 20px; color: #fff; cursor: pointer; position: relative; }
         .badge { position: absolute; top: -8px; right: -8px; background: var(--main); color: #000; font-size: 10px; padding: 2px 5px; border-radius: 50%; font-weight: bold; }
 
         /* SEARCH & CATS */
         .search-box { padding: 10px 5%; background: #fff; display: flex; gap: 10px; }
-        .search-input { width: 100%; padding: 12px 20px; border: 1px solid #eee; border-radius: 12px; outline: none; font-size: 14px; background: #f9f9f9; }
-        .top-nav-cats { background: #fff; display: flex; gap: 10px; padding: 10px 5%; overflow-x: auto; border-bottom: 1px solid #eee; position: sticky; top: 54px; z-index: 900; }
-        .chip { padding: 8px 18px; background: #eee; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; border: none; transition: 0.2s; }
+        .search-input { width: 100%; padding: 12px 20px; border: 1px solid #eee; border-radius: 12px; outline: none; background: #f9f9f9; }
+        .top-nav-cats { background: #fff; display: flex; gap: 10px; padding: 10px 5%; overflow-x: auto; border-bottom: 1px solid #eee; }
+        .chip { padding: 8px 18px; background: #eee; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; border: none; }
         .chip.active { background: var(--main); font-weight: bold; }
 
         /* GRID & CARDS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 15px; padding: 20px 5%; }
-        .card { background: #fff; border-radius: 18px; overflow: hidden; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px 5%; }
+        .card { background: #fff; border-radius: 18px; overflow: hidden; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
         
-        /* FAVORITE ICON ON CARD */
-        .fav-abs { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(255,255,255,0.8); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ccc; transition: 0.2s; border: none; cursor: pointer; }
-        .fav-abs.active { color: #ff4747; background: #fff; }
+        /* FAVORITE ICON */
+        .fav-abs { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(255,255,255,0.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ccc; border: none; cursor: pointer; }
+        .fav-abs.active { color: #ff4747; }
 
         /* MODALS */
         .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); z-index: 4000; justify-content: center; align-items: center; }
-        .modal-content { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 25px; box-sizing: border-box; max-height: 90vh; overflow-y: auto; }
+        .modal-content { background: #fff; width: 90%; max-width: 450px; border-radius: 25px; padding: 25px; position: relative; max-height: 85vh; overflow-y: auto; }
         .action-btn { background: var(--main); border: none; padding: 15px; border-radius: 12px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 10px; }
 
-        /* CART ITEM STYLE */
-        .cart-item { display: flex; gap: 15px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
-        .cart-item img { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
-        .cart-info { flex: 1; }
-        .cart-del { color: #ff4747; cursor: pointer; font-size: 18px; padding: 5px; }
-
-        /* SIDEBAR */
-        .sidebar { position: fixed; left: -280px; top: 0; width: 280px; height: 100%; background: #fff; z-index: 3000; transition: 0.3s; border-right: 1px solid #eee; display: flex; flex-direction: column; }
-        .sidebar.open { left: 0; box-shadow: 10px 0 30px rgba(0,0,0,0.1); }
-        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2500; }
+        /* CART ITEM */
+        .cart-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
+        .cart-item img { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
         
-        /* LANG DROPDOWN */
-        .lang-dropdown { display: none; position: absolute; top: 30px; right: 0; background: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); width: 130px; overflow: hidden; }
-        .lang-item { padding: 12px; color: #000; font-size: 14px; border-bottom: 1px solid #eee; cursor: pointer; }
-        .lang-item:hover { background: #f5f5f5; }
-
-        .slider-container { position: relative; width: 100%; height: 300px; border-radius: 15px; overflow: hidden; background: #f0f0f0; display: flex; align-items: center; }
-        .slider-container img { width: 100%; height: 100%; object-fit: contain; }
-        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; display: none; }
-        .nav-arrow.visible { display: block; }
-
-        .size-chip { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; font-size: 13px; background: #fff; }
-        .size-chip.active { background: var(--main); border-color: var(--main); font-weight: bold; }
+        /* LANG & SIDEBAR */
+        .sidebar { position: fixed; left: -280px; top: 0; width: 280px; height: 100%; background: #fff; z-index: 3000; transition: 0.3s; }
+        .sidebar.open { left: 0; }
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2500; }
+        .lang-dropdown { display: none; position: absolute; top: 30px; right: 0; background: #fff; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100px; z-index: 2000; }
+        .lang-item { padding: 10px; color: #000; cursor: pointer; text-align: center; }
     </style>
 </head>
 <body>
@@ -68,55 +53,48 @@
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <div class="sidebar" id="sidebar">
-    <div style="padding: 25px; border-bottom: 1px solid #eee;">
-        <h2 style="margin:0; font-size: 20px;">LUNXET <span style="color:var(--main)">MART</span></h2>
+    <div style="padding: 25px; background: #000; color: #fff;"><h2>LUNXET</h2></div>
+    <div style="padding: 20px;">
+        <p onclick="openSection('favs')"><i class="fas fa-heart"></i> Обране</p>
+        <p onclick="openAI()"><i class="fas fa-magic"></i> AI Стиліст</p>
+        <p onclick="openGame()"><i class="fas fa-gamepad"></i> Гра</p>
+        <hr>
+        <p onclick="openProfile()"><i class="fas fa-user"></i> Профіль / Вхід</p>
     </div>
-    <nav style="flex:1; padding: 10px 0;">
-        <div class="menu-item" onclick="location.reload()"><i class="fas fa-home" style="margin: 0 15px;"></i> <span class="lang-text" data-ua="Головна" data-en="Home">Головна</span></div>
-        <div class="menu-item" onclick="openSection('favs'); toggleMenu()"><i class="fas fa-heart" style="margin: 0 15px;"></i> <span class="lang-text" data-ua="Обране" data-en="Favorites">Обране</span></div>
-        <div class="menu-item" onclick="openSection('cart'); toggleMenu()"><i class="fas fa-shopping-bag" style="margin: 0 15px;"></i> <span class="lang-text" data-ua="Кошик" data-en="Cart">Кошик</span></div>
-        <div class="menu-item" onclick="openProfile(); toggleMenu()"><i class="fas fa-user-circle" style="margin: 0 15px;"></i> <span class="lang-text" data-ua="Профіль" data-en="Profile">Профіль</span></div>
-    </nav>
 </div>
 
 <header>
     <div style="display: flex; align-items: center; gap: 15px;">
-        <div onclick="toggleMenu()" style="cursor: pointer;"><i class="fas fa-bars"></i></div>
-        <div style="font-weight: 900; font-size: 22px; letter-spacing: -1px;">LUNXET</div>
+        <i class="fas fa-bars" onclick="toggleMenu()"></i>
+        <div style="font-weight: 900; font-size: 20px;">LUNXET</div>
     </div>
     <div class="header-right">
-        <div class="lang-box" onclick="toggleLang()" style="position:relative;">
-            <span id="cur-lang" style="color:var(--main); font-weight: 800; cursor:pointer;">UA</span>
+        <div style="position:relative;">
+            <span id="cur-lang" onclick="toggleLang()" style="color:var(--main); font-weight:bold; cursor:pointer;">UA</span>
             <div class="lang-dropdown" id="lang-list">
-                <div class="lang-item" onclick="setLang('UA')">Українська</div>
-                <div class="lang-item" onclick="setLang('EN')">English</div>
+                <div class="lang-item" onclick="setLang('UA')">UA</div>
+                <div class="lang-item" onclick="setLang('EN')">EN</div>
             </div>
         </div>
-        <div class="icon-btn" onclick="openSection('favs')">
-            <i class="far fa-heart"></i>
-            <span id="fav-count" class="badge">0</span>
-        </div>
-        <div class="icon-btn" onclick="openSection('cart')">
-            <i class="fas fa-shopping-bag"></i>
-            <span id="cart-count" class="badge">0</span>
-        </div>
+        <i class="fas fa-heart icon-btn" onclick="openSection('favs')"><span id="fav-count" class="badge">0</span></i>
+        <i class="fas fa-shopping-bag icon-btn" onclick="openSection('cart')"><span id="cart-count" class="badge">0</span></i>
+        <i class="fas fa-user-circle icon-btn" onclick="openProfile()"></i>
     </div>
 </header>
 
-<div class="top-nav-cats" id="cat-nav">
+<div class="top-nav-cats">
     <div class="chip active" onclick="filterBy('Всі')">Всі</div>
     <div class="chip" onclick="filterBy('куртки')">Куртки</div>
-    <div class="chip" onclick="filterBy('кофти')">Кофти</div>
     <div class="chip" onclick="filterBy('штани')">Штани</div>
-    <div class="chip" onclick="filterBy('взуття')">Взуття</div>
+    <div class="chip" onclick="filterBy('кофти')">Кофти</div>
 </div>
 
 <div class="search-box">
     <input type="text" id="main-search" class="search-input" placeholder="Пошук..." oninput="handleSearch()">
-    <select id="sort-select" onchange="sortProducts()" style="padding: 10px; border-radius: 12px; border: 1px solid #eee; outline: none;">
-        <option value="default">Сортування</option>
-        <option value="cheap">Найдешевші</option>
-        <option value="expensive">Найдорожчі</option>
+    <select id="sort-select" onchange="sortProducts()" style="border-radius: 12px; border: 1px solid #eee; padding: 0 10px;">
+        <option value="default">↕</option>
+        <option value="cheap">$-$$</option>
+        <option value="expensive">$$-$</option>
     </select>
 </div>
 
@@ -124,33 +102,28 @@
 
 <div id="infoModal" class="modal" onclick="if(event.target==this)closeM('infoModal')">
     <div class="modal-content">
-        <h2 id="info-title" style="margin-top:0;">LUNXET</h2>
+        <h2 id="info-title"></h2>
         <div id="info-body"></div>
-        <button class="action-btn" onclick="closeM('infoModal')">ОК</button>
+        <button class="action-btn" onclick="closeM('infoModal')">Закрити</button>
     </div>
 </div>
 
 <div id="prodModal" class="modal" onclick="if(event.target==this)closeM('prodModal')">
     <div class="modal-content">
-        <div class="slider-container">
-            <button class="nav-arrow" style="left:10px;" onclick="changePhoto(-1)"><i class="fas fa-chevron-left"></i></button>
-            <img id="m-img" src="">
-            <button class="nav-arrow" style="right:10px;" onclick="changePhoto(1)"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        <h2 id="m-title" style="margin:15px 0 5px 0;"></h2>
-        <b id="m-price" style="font-size:20px; color:var(--dark);"></b>
-        <div id="m-sizes-container" style="display:flex; gap:8px; margin: 15px 0;"></div>
-        <p id="m-desc" style="font-size:13px; color:#666;"></p>
+        <img id="m-img" src="" style="width:100%; border-radius:15px;">
+        <h2 id="m-title" style="margin:10px 0;"></h2>
+        <b id="m-price" style="font-size:20px;"></b>
+        <div id="m-sizes" style="display:flex; gap:10px; margin:15px 0;"></div>
+        <p id="m-desc" style="color:#666; font-size:14px;"></p>
         <button class="action-btn" onclick="addToCart()">ДОДАТИ В КОШИК</button>
     </div>
 </div>
 
 <script>
     const api = window.location.origin + "/api";
-    let allP = [], cart = [], favs = [], curP = null, selectedSize = null, currentPhotoIdx = 0;
+    let allP = [], cart = [], favs = [], curP = null, selectedSize = null;
     let currentLang = localStorage.getItem('lang') || 'UA';
 
-    // ІНІЦІАЛІЗАЦІЯ
     async function load() {
         try {
             const res = await fetch(`${api}/products`);
@@ -160,58 +133,53 @@
             render(allP);
             updateBadges();
             applyLang();
-        } catch(e) { console.error("Помилка завантаження"); }
+        } catch(e) { console.log("Помилка завантаження"); }
     }
 
     function render(data) {
         const grid = document.getElementById('products-grid');
-        grid.innerHTML = data.map((p, i) => {
+        grid.innerHTML = data.map(p => {
             const isFav = favs.some(f => f.name === p.name);
-            let img = p.images && p.images[0] ? p.images[0] : '';
-            if(!img.startsWith('http')) img = window.location.origin + (img.startsWith('/') ? '' : '/') + img;
-
             return `
                 <div class="card">
                     <button class="fav-abs ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); toggleFav('${p.name}')">
                         <i class="${isFav ? 'fas' : 'far'} fa-heart"></i>
                     </button>
                     <div onclick="openP('${p.name}')">
-                        <img src="${img}" onerror="this.src='https://via.placeholder.com/200'">
-                        <div style="padding:12px;">
-                            <h3 style="font-size:14px; margin:0 0 5px 0; height: 34px; overflow: hidden;">${p.name}</h3>
-                            <b style="color:var(--dark);">${p.price} ₴</b>
+                        <img src="${p.images[0]}">
+                        <div style="padding:10px;">
+                            <div style="font-size:13px; font-weight:bold; height:32px; overflow:hidden;">${p.name}</div>
+                            <div style="margin-top:5px;">${p.price} ₴</div>
                         </div>
                     </div>
                 </div>`;
         }).join('');
     }
 
-    // ЛОГІКА ОБРАНОГО
+    // ФУНКЦІЇ ОБРАНОГО
     function toggleFav(name) {
         const idx = favs.findIndex(f => f.name === name);
         if(idx > -1) favs.splice(idx, 1);
         else favs.push(allP.find(p => p.name === name));
-        
         localStorage.setItem('favs', JSON.stringify(favs));
         updateBadges();
-        handleSearch(); // Перемалювати з оновленими іконками
+        handleSearch();
     }
 
-    // КЕРУВАННЯ КОШИКОМ
+    // КОШИК
     function addToCart() {
-        if(curP.sizes && curP.sizes.length > 0 && !selectedSize) return showMsg("Оберіть розмір!");
+        if(curP.sizes && !selectedSize) return alert("Оберіть розмір");
         cart.push({...curP, selectedSize, cartId: Date.now()});
         localStorage.setItem('cart', JSON.stringify(cart));
         updateBadges();
         closeM('prodModal');
-        showMsg("Товар у кошику!");
     }
 
-    function removeFromCart(cartId) {
-        cart = cart.filter(item => item.cartId !== cartId);
+    function removeFromCart(id) {
+        cart = cart.filter(i => i.cartId !== id);
         localStorage.setItem('cart', JSON.stringify(cart));
         updateBadges();
-        openSection('cart'); // Перемалювати вікно кошика
+        openSection('cart');
     }
 
     function updateBadges() {
@@ -219,53 +187,54 @@
         document.getElementById('fav-count').innerText = favs.length;
     }
 
-    // ВІДКРИТТЯ ТОВАРУ
-    function openP(name) {
-        curP = allP.find(p => p.name === name);
-        currentPhotoIdx = 0; selectedSize = null;
-        updatePhoto();
-        document.getElementById('m-title').innerText = curP.name;
-        document.getElementById('m-price').innerText = curP.price + " ₴";
-        document.getElementById('m-desc').innerText = curP.desc || "";
+    // ВІДКРИТТЯ СЕКЦІЙ (Кошик, Обране, Профіль, АІ, Гра)
+    function openSection(type) {
+        const title = document.getElementById('info-title');
+        const body = document.getElementById('info-body');
         
-        const sc = document.getElementById('m-sizes-container');
-        sc.innerHTML = curP.sizes ? curP.sizes.map(s => `<div class="size-chip" onclick="selS(this,'${s}')">${s}</div>`).join('') : "";
-        
-        const hasMany = curP.images && curP.images.length > 1;
-        document.querySelectorAll('.nav-arrow').forEach(a => a.style.display = hasMany ? 'block' : 'none');
-        
-        openM('prodModal');
+        if(type === 'cart') {
+            title.innerText = "Кошик";
+            body.innerHTML = cart.length ? cart.map(i => `
+                <div class="cart-item">
+                    <img src="${i.images[0]}">
+                    <div style="flex:1"><b>${i.name}</b><br><small>${i.selectedSize || ''}</small><br>${i.price} ₴</div>
+                    <i class="fas fa-trash" onclick="removeFromCart(${i.cartId})" style="color:red"></i>
+                </div>
+            `).join('') + `<button class="action-btn">ОФОРМИТИ</button>` : "Порожньо";
+        } else if(type === 'favs') {
+            title.innerText = "Обране";
+            body.innerHTML = favs.length ? `<div class="grid" style="padding:0">` + favs.map(p => `
+                <div class="card" onclick="closeM('infoModal'); openP('${p.name}')">
+                    <img src="${p.images[0]}" style="height:100px">
+                    <div style="padding:5px; font-size:11px;">${p.name}</div>
+                </div>`).join('') + `</div>` : "Нічого немає";
+        }
+        openM('infoModal');
     }
 
-    function selS(el, s) { 
-        document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active')); 
-        el.classList.add('active'); 
-        selectedSize = s; 
+    function openAI() {
+        document.getElementById('info-title').innerText = "AI Стиліст";
+        document.getElementById('info-body').innerHTML = "<p>Завантажте фото або опишіть свій стиль, і AI підбере образ!</p><input type='file' style='margin-bottom:10px'><button class='action-btn'>Аналізувати</button>";
+        openM('infoModal');
     }
 
-    function updatePhoto() {
-        let img = curP.images[currentPhotoIdx];
-        if(!img.startsWith('http')) img = window.location.origin + (img.startsWith('/') ? '' : '/') + img;
-        document.getElementById('m-img').src = img;
+    function openGame() {
+        document.getElementById('info-title').innerText = "LUNXET RUN";
+        document.getElementById('info-body').innerHTML = "<div style='width:100%; height:200px; background:#000; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:15px;'>Гра завантажується...</div>";
+        openM('infoModal');
     }
 
-    function changePhoto(dir) {
-        currentPhotoIdx = (currentPhotoIdx + dir + curP.images.length) % curP.images.length;
-        updatePhoto();
+    function openProfile() {
+        document.getElementById('info-title').innerText = "Вхід до кабінету";
+        document.getElementById('info-body').innerHTML = "<input type='text' placeholder='Логін' class='search-input' style='margin-bottom:10px'><input type='password' placeholder='Пароль' class='search-input'><button class='action-btn'>Увійти</button>";
+        openM('infoModal');
     }
 
-    // ПОШУК, ФІЛЬТРИ, СОРТУВАННЯ
-    function handleSearch() {
-        const q = document.getElementById('main-search').value.toLowerCase();
-        let data = allP.filter(p => p.name.toLowerCase().includes(q));
-        render(data);
-    }
-
+    // СИСТЕМНІ ФУНКЦІЇ
     function filterBy(cat) {
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
         event.target.classList.add('active');
-        const data = cat === 'Всі' ? allP : allP.filter(p => p.cat === cat);
-        render(data);
+        render(cat === 'Всі' ? allP : allP.filter(p => p.cat === cat));
     }
 
     function sortProducts() {
@@ -276,67 +245,28 @@
         render(data);
     }
 
-    // СЕКЦІЇ (ОБРАНЕ ТА КОШИК)
-    function openSection(type) {
-        const body = document.getElementById('info-body');
-        const title = document.getElementById('info-title');
-
-        if(type === 'cart') {
-            title.innerText = currentLang === 'UA' ? "Кошик" : "Shopping Cart";
-            if(cart.length === 0) body.innerHTML = "Порожньо...";
-            else {
-                let total = cart.reduce((s, i) => s + i.price, 0);
-                body.innerHTML = cart.map(i => `
-                    <div class="cart-item">
-                        <img src="${i.images[0]}" onerror="this.src='https://via.placeholder.com/200'">
-                        <div class="cart-info">
-                            <div style="font-weight:bold; font-size:14px;">${i.name}</div>
-                            <div style="font-size:12px; color:#888;">${i.selectedSize || 'Універсальний'}</div>
-                            <div style="font-weight:900;">${i.price} ₴</div>
-                        </div>
-                        <i class="fas fa-trash-alt cart-del" onclick="removeFromCart(${i.cartId})"></i>
-                    </div>
-                `).join('') + `<h3 style="text-align:right; margin-top:20px;">Разом: ${total} ₴</h3>
-                <button class="action-btn" onclick="showMsg('Замовлення прийнято!')">ОФОРМИТИ</button>`;
-            }
-        } 
-        else if(type === 'favs') {
-            title.innerText = currentLang === 'UA' ? "Обране" : "Favorites";
-            if(favs.length === 0) body.innerHTML = "Тут поки нічого немає.";
-            else {
-                body.innerHTML = `<div class="grid" style="padding:0; grid-template-columns: 1fr 1fr;">` + 
-                favs.map(p => `<div class="card" onclick="closeM('infoModal'); openP('${p.name}')">
-                    <img src="${p.images[0]}" style="height:120px;">
-                    <div style="padding:8px; font-size:12px;"><b>${p.name}</b><br>${p.price} ₴</div>
-                </div>`).join('') + `</div>`;
-            }
-        }
-        openM('infoModal');
+    function handleSearch() {
+        const q = document.getElementById('main-search').value.toLowerCase();
+        render(allP.filter(p => p.name.toLowerCase().includes(q)));
     }
 
-    // МОВА
+    function openP(name) {
+        curP = allP.find(p => p.name === name);
+        document.getElementById('m-img').src = curP.images[0];
+        document.getElementById('m-title').innerText = curP.name;
+        document.getElementById('m-price').innerText = curP.price + " ₴";
+        document.getElementById('m-desc').innerText = curP.desc || "";
+        document.getElementById('m-sizes').innerHTML = curP.sizes ? curP.sizes.map(s => `<div onclick="selectedSize='${s}'; this.style.background='var(--main)'" style="border:1px solid #ddd; padding:5px 10px; border-radius:5px; cursor:pointer;">${s}</div>`).join('') : "";
+        openM('prodModal');
+    }
+
     function toggleLang() { document.getElementById('lang-list').style.display = 'block'; }
-    function setLang(l) {
-        currentLang = l;
-        localStorage.setItem('lang', l);
-        document.getElementById('cur-lang').innerText = l;
-        document.getElementById('lang-list').style.display = 'none';
-        applyLang();
-    }
-    function applyLang() {
-        document.querySelectorAll('.lang-text').forEach(el => {
-            el.innerText = el.getAttribute(`data-${currentLang.toLowerCase()}`);
-        });
-        document.getElementById('main-search').placeholder = currentLang === 'UA' ? "Пошук..." : "Search...";
-    }
-
-    // ДОПОМІЖНІ
-    function showMsg(m) { document.getElementById('info-title').innerText = "LUNXET"; document.getElementById('info-body').innerText = m; openM('infoModal'); }
+    function setLang(l) { currentLang = l; localStorage.setItem('lang', l); location.reload(); }
+    function applyLang() { document.getElementById('cur-lang').innerText = currentLang; }
     function openM(id) { document.getElementById(id).style.display = 'flex'; }
     function closeM(id) { document.getElementById(id).style.display = 'none'; }
     function toggleMenu() { document.getElementById('sidebar').classList.toggle('open'); document.getElementById('overlay').style.display = document.getElementById('sidebar').classList.contains('open') ? 'block' : 'none'; }
-    
-    window.onclick = (e) => { if(!e.target.closest('.lang-box')) document.getElementById('lang-list').style.display = 'none'; }
+
     window.onload = load;
 </script>
 
