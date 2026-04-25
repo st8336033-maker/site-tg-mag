@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stylist - LUNXET MART</title>
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)">
+    <style>
+        :root { --main: #cdef2e; --dark: #111; --gray: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { color: var(--main); text-transform: uppercase; letter-spacing: 2px; }
+
+        .section { background: var(--gray); padding: 20px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #333; }
+        h3 { margin-top: 0; color: var(--main); font-size: 14px; text-transform: uppercase; margin-bottom: 15px; }
+
+        .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        input, select { 
+            background: #222; border: 1px solid #444; color: #fff; padding: 12px; 
+            border-radius: 10px; outline: none; width: 100%; box-sizing: border-box;
+        }
+
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .opt-card { 
+            background: #222; padding: 12px; border-radius: 12px; cursor: pointer; 
+            display: flex; align-items: center; gap: 10px; border: 1px solid transparent; 
+        }
+        .opt-card input { accent-color: var(--main); }
+
+        .btn-gen { 
+            background: var(--main); color: #000; border: none; width: 100%; 
+            padding: 20px; border-radius: 15px; font-weight: 900; font-size: 18px; cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-gen:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        #result-area { display: none; margin-top: 30px; animation: fadeIn 0.5s; }
+        .ai-image { width: 100%; border-radius: 20px; border: 2px solid var(--main); margin-bottom: 20px; }
+        .info-box { background: #fff; color: #000; padding: 20px; border-radius: 15px; text-align: left; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>LUNXET AI</h1>
+        <p>Персональний підбір образу</p>
+    </div>
+
+    <div class="section">
+        <h3>1. Твої дані</h3>
+        <div class="input-group">
+            <input type="number" id="height" placeholder="Зріст (см)">
+            <select id="hair">
+                <option value="blonde">Блонд</option>
+                <option value="brunette">Брюнет</option>
+                <option value="black">Чорний</option>
+                <option value="red">Рудий</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>2. Що шукаємо?</h3>
+        <div class="options-grid">
+            <label class="opt-card"><input type="checkbox" id="full-look" onchange="toggleCats(this)"> Повний образ</label>
+            <label class="opt-card"><input type="checkbox" class="cat" value="штани"> Штани</label>
+            <label class="opt-card"><input type="checkbox" class="cat" value="кофти"> Кофти</label>
+            <label class="opt-card"><input type="checkbox" class="cat" value="куртки"> Верхній одяг</label>
+        </div>
+    </div>
+
+    <button class="btn-gen" id="genBtn" onclick="startGeneration()">ЗГЕНЕРУВАТИ ОБРАЗ</button>
+
+    <div id="result-area">
+        <h3>Твій Look:</h3>
+        <img id="res-img" class="ai-image" src="" alt="AI Look">
+        <div class="info-box">
+            <h4>Використані товари:</h4>
+            <ul id="res-items"></ul>
+            <hr>
+            <p id="res-advice" style="font-style: italic;"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleCats(el) {
+        document.querySelectorAll('.cat').forEach(c => c.disabled = el.checked);
+    }
+
+    async function startGeneration() {
+        const btn = document.getElementById('genBtn');
+        const h = document.getElementById('height').value;
+        const hair = document.getElementById('hair').value;
+        
+        if(!h) return alert("Вкажіть зріст!");
+
+        let cats = [];
+        if(document.getElementById('full-look').checked) cats = ["Full Look"];
+        else document.querySelectorAll('.cat:checked').forEach(c => cats.push(c.value));
+
+        if(cats.length === 0) return alert("Оберіть категорії!");
+
+        btn.innerText = "ШІ ДУМАЄ...";
+        btn.disabled = true;
+
+        try {
+            const response = await fetch('/api/generate-look', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ height: h, hair: hair, categories: cats })
+            });
+
+            const data = await response.json();
+
+            // Показуємо результат
+            document.getElementById('result-area').style.display = 'block';
+            
+            // Генеруємо візуалізацію через Pollinations (безкоштовно і без ключів для фото)
+            const photoUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(data.visual_prompt)}?width=512&height=512&nologo=true`;
+            document.getElementById('res-img').src = photoUrl;
+
+            // Список товарів
+            document.getElementById('res-items').innerHTML = data.items.map(i => `<li><b>${i}</b></li>`).join('');
+            document.getElementById('res-advice').innerText = data.advice;
+
+        } catch (e) {
+            alert("Помилка зв'язку з сервером.");
+        } finally {
+            btn.innerText = "ЗГЕНЕРУВАТИ ЩЕ РАЗ";
+            btn.disabled = false;
+        }
+    }
+</script>
+
+</body>
+</html>

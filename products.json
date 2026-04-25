@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Джинси",
+    "price": 1999,
+    "desc": "Класичні «baggy» джинси з вільним кроєм на стегнах і ногах – це найактуальніший формат деніму останнього часу. Такий силует родом із культури стрітстайлу та юніорського вінтажу, що переживає сучасне повернення.",
+    "cat": "штани",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIC0Wnf3VqudVkxxdd8v6B_fchlw6iQAAKWFmsboYoAAUsBe-7ldIcS3AEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDXGnf6bnBtHRySjzoq-sj0z8zg6gSAALtFmsboYoAAUtlTuuGXB5CfAEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDW2nf6bnXDlgtn3uPInjJfnV1NlYcAALsFmsboYoAAUt2MbrbjwwLiwEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDYGnf6bmy-KBaYZ7lW5sJsgXIwU4iAALuFmsboYoAAUsaDLJnXPMBpQEAAwIAA3cAAzsE.jpg"
+    ]
+  },
+  {
+    "name": "Пуховик",
+    "price": 4999,
+    "desc": "Обʼємний зимовий пуховик із лаконічним дизайном і геометричним кроєм. Модель із високим коміром-стійкою та глибоким капюшоном створює захист від холоду й вітру. Застібка на блискавку з подвійним бігунком і вітрозахисною планкою на кнопках. Дві великі накладні кишені доповнюють функціональність.",
+    "cat": "куртки",
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDiGnf6pnUZc0ocY9B87KEOWILL4PgAAL6FmsboYoAAUuSb8tdid-XngEAAwIAA3kAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDiWnf6plV4ZUj_hQo7mhhlTlmQtWkAAL7FmsboYoAAUsyzh18F-7oTgEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDi2nf6pkTjnbc_3dvQEdu0VBgj92_AAL9FmsboYoAAUtPh5u6mM6TOgEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIDimnf6pmFziEOvtN-VCnRDBbi137oAAL8FmsboYoAAUtEsptD7edjMgEAAwIAA3cAAzsE.jpg"
+    ]
+  },
+  {
+    "name": "Худі",
+    "price": 1999,
+    "desc": "Худі з щільної трикотажної тканини 440 г/м², виконане з тринитки без начосу. Завдяки фактурному полотну та жорсткішій структурі модель добре тримає форму. \"Boxy\" крій з опущеною лінією плеча та об’ємним подвійним капюшоном створює сучасний силует з відчуттям свободи.",
+    "cat": "худі",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAID62ngGjgEjz0gXV6eN3bK_YhxtgIyAAJSF2sboYoAAUtQa114GR_wmwEAAwIAA3kAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAID7WngGjiLJFkiwsOq3pxb8KC3K1gNAAJUF2sboYoAAUsDlJv_RYoy_QEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAID7mngGjgEIqd-Z68XOp3J_vqW4-7sAAJVF2sboYoAAUu8ibysIIx9hwEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAID72ngGjimZLDILHU09whsU-E4gg0HAAJWF2sboYoAAUtNW-cb0s7KWAEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAID7GngGjg3-C2_WhQ-4XhSSK-i-8bfAAJTF2sboYoAAUtokrq1ea1qwQEAAwIAA3cAAzsE.jpg"
+    ]
+  },
+  {
+    "name": "Куртка",
+    "price": 3399,
+    "desc": "Обʼємна куртка з м’якої еко-шкіри зі структурованою поверхнею та делікатним блиском. Силует побудований на розширеній лінії плеча й вільному крої, який формує виразну архітектоніку форми.",
+    "cat": "куртки",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIECGngIWPzKfQxnYk8cRFQbFQg64SKAAJhF2sboYoAAUvenbhXaKcS2wEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIEB2ngIWOen0pxvbI0uVI4PuHB_V9qAAJgF2sboYoAAUuJAQ6QxNxZkAEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIECWngIWMJWjBSKo7htyDz_s13VODXAAJjF2sboYoAAUvNFDwe_0dN9wEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIEBmngIWPSS-kV90ye2_3xBeIJA6LbAAJfF2sboYoAAUsZcUOZq2ngvQEAAwIAA3cAAzsE.jpg",
+      "http://127.0.0.1:5000/uploads/AgACAgIAAxkBAAIECmngIWMFuN_T9FSlvFhI7DQTXArVAAJiF2sboYoAAUu-VqIzvGMLdwEAAwIAA3cAAzsE.jpg"
+    ]
+  },
+  {
+    "name": "куртка",
+    "cat": "Верхній одяг",
+    "price": 8999,
+    "desc": "Синя чоловіча куртка HUGO Blue — це демісезонна модель, що забезпечує комфорт у теплі дні. Виготовлена з чистої бавовни, має вільний крій та застібку-блискавку, завдяки чому є практичним елементом гардероба. Ця модель у стилі кежуал пасуватиме до багатьох весняних та літніх образів, гарантуючи свободу рухів.",
+    "sizes": [
+      "M"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFD2no4ZTB5bizxoVauZ6EPN7XwVwvAALfF2sbKANIS0ieW4XJN1tVAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFEWno4aGGFD6BjFoiAXF1sdNz78_gAALgF2sbKANIS2RlOyTbC7tIAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFE2no4a4myS5sQacJJydk9Iv-_jVwAALhF2sbKANIS3CzpL00N6O3AQADAgADeQADOwQ.jpg"
+    ]
+  },
+  {
+    "name": "Кросівки",
+    "cat": "Взуття",
+    "price": 4199,
+    "desc": "Кросівки з колекції Asics виготовлені із поєднання текстильного і синтетичного матеріалів. Модель з гумовою зовнішньою підошвою, яка є міцною та стійкою до пошкоджень.",
+    "sizes": [
+      "36\n37\n38\n39\n40\n42\n44\n45\n46\n47\n48"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFJWno4nooTb-n1D2HNqDdE8jbcayvAALqF2sbKANIS_uvjeNSMId2AQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFJ2no4oMD6bZHCW3qy48YSSYZjJl_AALrF2sbKANIS_TKGlh1EfVaAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFKWno4otrQXBWc3UryR9grZPzHxRvAALsF2sbKANIS6pTLzZzFHfEAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFK2no4pdEaCBJJ7OfGGz8q-KkeAABtwAC7RdrGygDSEun3ajy9n71yQEAAwIAA3kAAzsE.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFLWno4qPGJGWCS-MMRhtAyLfYcdznAALvF2sbKANISzDI5nsdQKElAQADAgADeQADOwQ.jpg"
+    ]
+  },
+  {
+    "name": "Сумочка",
+    "cat": "Аксесуари",
+    "price": 2099,
+    "desc": "Середнього розміру сумочка із колекції adidas Originals. Застібна модель виготовлена зі штучної шкіри.",
+    "sizes": [
+      "Універсальний"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFPWno41i0Qk_AzlgHV7mMUlabTp7tAALzF2sbKANIS8daMufVPtKAAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFP2no418_9AmV96rtktVO4HhEZdcLAAL0F2sbKANIS1l4gMlYqdMgAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFQWno42mcjk8gFB1VYkLU4yYByJ5KAAL1F2sbKANIS75CdCH82cLHAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFQ2no43IDoH9Iwjj0vKhvRskSp1nGAAL2F2sbKANISwSccEcG1mOJAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFRWno43msKmIPz4iMDTtpkFXkOpgJAAL3F2sbKANISw4rqnYWYh9zAQADAgADeQADOwQ.jpg"
+    ]
+  },
+  {
+    "name": "Лонгслів",
+    "cat": "Кофти",
+    "price": 3199,
+    "desc": "Бордовий лонгслів United Colors of Benetton — це жіночий лонгслів, що поєднує комфорт носіння з модним дизайном. Виготовлений з м'якої бавовни, вільного крою та з еластичного матеріалу, оздоблений модними смужками, він сприяє створенню невимушених, але стильних образів для різних випадків, де важливі комфорт та естетика.",
+    "sizes": [
+      "S"
+    ],
+    "images": [
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFVWno5AsAATFi4YLYTRtHYayC2ivhowAC-BdrGygDSEsKf0_LGWxfKQEAAwIAA3kAAzsE.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFV2no5BLK63s3SccfwLF4kxvdBWOJAAL5F2sbKANIS3uCfpDvW0bBAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFWWno5BuCDCAiKBHOTz1e5jlHFKUBAAL6F2sbKANIS6Wv4MCbMiddAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFW2no5CKPK82CzsNUkLNaiRyI2deXAAL7F2sbKANIS6FZy3IBkcPDAQADAgADeQADOwQ.jpg",
+      "http://127.0.0.1:5000/static/uploads/AgACAgIAAxkBAAIFXWno5ClgjK4WEWa-ZfCFppqTktAjAAL8F2sbKANIS6nJl9BXfnMCAQADAgADeQADOwQ.jpg"
+    ]
+  }
+]
