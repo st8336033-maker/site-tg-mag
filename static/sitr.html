@@ -12,7 +12,7 @@
         header { background: #000; color: #fff; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000; }
         .header-right { display: flex; align-items: center; gap: 18px; }
         
-        /* Card Nav Animation Effect for Sidebar Items */
+        /* Card Nav Animation for Sidebar */
         .menu-item { 
             display: flex; align-items: center; padding: 14px 20px; color: #555; text-decoration: none; cursor: pointer; 
             transition: all 0.3s ease; font-size: 15px; gap: 15px; position: relative; overflow: hidden;
@@ -24,61 +24,45 @@
         .menu-item:hover::after { width: 100%; }
         .menu-item:hover { color: #000; transform: translateX(5px); }
 
-        /* Grid & Cards */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; padding: 20px 5%; }
         .card { background: #fff; border-radius: 18px; overflow: hidden; position: relative; box-shadow: 0 6px 15px rgba(0,0,0,0.06); cursor: pointer; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         
-        /* Fav Heart Icon on Card */
         .fav-btn { 
             position: absolute; top: 10px; right: 10px; z-index: 10; 
             background: rgba(255,255,255,0.9); width: 32px; height: 32px; 
             border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            color: #ccc; transition: 0.2s; border: none; cursor: pointer;
+            color: #ccc; border: none; cursor: pointer;
         }
         .fav-btn.active { color: #ff4747; }
 
-        /* Sidebar Styles */
         .sidebar { position: fixed; left: -280px; top: 0; width: 280px; height: 100%; background: #fff; z-index: 3000; transition: 0.3s; display: flex; flex-direction: column; border-right: 1px solid #eee; }
         .sidebar.open { left: 0; box-shadow: 15px 0 40px rgba(0,0,0,0.1); }
         .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2500; }
         
-        /* Categories & Search */
-        .top-nav-cats { background: #fff; display: flex; gap: 10px; padding: 10px 5%; overflow-x: auto; border-bottom: 1px solid #ddd; sticky; top: 54px; z-index: 900; }
-        .chip { padding: 8px 18px; background: #eee; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; border: none; transition: 0.2s; }
+        .top-nav-cats { background: #fff; display: flex; gap: 10px; padding: 10px 5%; overflow-x: auto; border-bottom: 1px solid #ddd; position: sticky; top: 54px; z-index: 900; }
+        .chip { padding: 8px 18px; background: #eee; border-radius: 20px; font-size: 13px; white-space: nowrap; cursor: pointer; border: none; }
         .chip.active { background: var(--main); font-weight: bold; }
         
-        .search-container { padding: 10px 5%; display: flex; gap: 10px; align-items: center; }
-        .search-bar { flex: 1; padding: 10px 15px; border-radius: 12px; border: 1px solid #ddd; outline: none; font-size: 14px; }
-        .sort-btn { padding: 9px; border-radius: 12px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-weight: bold; }
+        .search-container { padding: 10px 5%; display: flex; gap: 10px; }
+        .search-bar { flex: 1; padding: 10px 15px; border-radius: 12px; border: 1px solid #ddd; outline: none; }
 
-        /* Modals */
         .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); z-index: 4000; justify-content: center; align-items: center; }
         .modal-content { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 25px; box-sizing: border-box; max-height: 85vh; overflow-y: auto; position: relative; }
         .action-btn { background: var(--main); border: none; padding: 16px; border-radius: 14px; font-weight: 900; width: 100%; cursor: pointer; margin-top: 15px; }
 
-        /* Cart Item Styles */
+        /* Cart Item */
         .cart-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; align-items: center; }
-        .cart-item img { width: 60px; height: 60px; border-radius: 10px; object-fit: cover; }
-        .cart-item-info { flex: 1; }
-        .cart-item-info b { font-size: 14px; display: block; }
-        .cart-item-info small { color: #888; }
-        .remove-item { color: #ff4747; cursor: pointer; padding: 5px; }
-
-        /* Badges */
-        .badge { position: absolute; top: -8px; right: -8px; background: var(--main); color: #000; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: bold; }
-
-        /* Count Up Animation */
-        .count-up { font-weight: 900; color: var(--dark); transition: 0.5s; }
-
-        .lang-box { position: relative; cursor: pointer; font-size: 13px; color: var(--main); font-weight: 800; }
-        .lang-dropdown { display: none; position: absolute; top: 25px; right: 0; background: #fff; color: #000; border-radius: 8px; width: 100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .lang-dropdown div { padding: 10px; border-bottom: 1px solid #eee; text-align: center; }
+        .cart-item img { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
         
-        /* Slider inside modal */
-        .slider-container { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; background: #f0f0f0; border-radius: 15px; margin-bottom: 15px; }
-        .slider-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .badge { position: absolute; top: -8px; right: -8px; background: var(--main); color: #000; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: bold; }
+        
+        /* Game Styles */
+        #game-canvas { width: 100%; height: 300px; background: #111; border-radius: 15px; position: relative; overflow: hidden; margin-top: 10px; }
+        .game-item { position: absolute; font-size: 30px; cursor: pointer; user-select: none; }
+
+        .lang-dropdown { display: none; position: absolute; top: 25px; right: 0; background: #fff; color: #000; border-radius: 8px; width: 100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .lang-dropdown div { padding: 10px; border-bottom: 1px solid #eee; text-align: center; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -89,12 +73,12 @@
     <div style="padding: 25px; border-bottom: 1px solid #eee;">
         <p style="font-weight: 900; margin: 0; font-size: 18px;">LUNXET</p>
     </div>
-    <nav style="padding-top: 10px;">
-        <div class="menu-item" onclick="location.reload()"><i class="fas fa-home"></i> <span data-lang="home">Головна</span></div>
-        <div class="menu-item" onclick="openAI()"><i class="fas fa-robot"></i> <span data-lang="ai_stylist">AI Стиліст</span></div>
-        <div class="menu-item" onclick="openGame()"><i class="fas fa-gamepad"></i> <span data-lang="bonus_game">Бонусна гра</span></div>
-        <div class="menu-item" onclick="openSection('favs')"><i class="fas fa-heart"></i> <span data-lang="favorites">Обране</span></div>
-        <div class="menu-item" onclick="openProfile()"><i class="fas fa-user-circle"></i> <span data-lang="profile">Профіль</span></div>
+    <nav>
+        <div class="menu-item" onclick="location.reload()"><i class="fas fa-home"></i> <span>Головна</span></div>
+        <div class="menu-item" onclick="window.location.href='/ai-helper'"><i class="fas fa-robot"></i> <span>AI Стиліст</span></div>
+        <div class="menu-item" onclick="openGame()"><i class="fas fa-gamepad"></i> <span>Бонусна гра</span></div>
+        <div class="menu-item" onclick="openSection('favs')"><i class="fas fa-heart"></i> <span>Обране</span></div>
+        <div class="menu-item" onclick="openProfile()"><i class="fas fa-user-circle"></i> <span>Профіль</span></div>
     </nav>
 </div>
 
@@ -104,12 +88,11 @@
         <div style="font-weight: 900; font-size: 22px;">LUNXET</div>
     </div>
     <div class="header-right">
-        <div class="lang-box" onclick="toggleLang()">
-            <span id="cur-lang">UA</span> <i class="fas fa-chevron-down" style="font-size: 10px;"></i>
+        <div style="position:relative; cursor:pointer; font-weight:800; color:var(--main)" onclick="document.getElementById('lang-list').style.display='block'">
+            <span id="cur-lang">UA</span>
             <div class="lang-dropdown" id="lang-list">
                 <div onclick="setLang('UA')">UA</div>
                 <div onclick="setLang('EN')">EN</div>
-                <div onclick="setLang('DE')">DE</div>
             </div>
         </div>
         <div class="icon-btn" onclick="openSection('favs')"><i class="far fa-heart"></i><span id="fav-count" class="badge">0</span></div>
@@ -126,8 +109,8 @@
 </div>
 
 <div class="search-container">
-    <input type="text" id="site-search" class="search-bar" placeholder="Пошук товарів..." oninput="handleSearch()">
-    <select id="sort-select" class="sort-btn" onchange="handleSort()">
+    <input type="text" id="site-search" class="search-bar" placeholder="Пошук..." oninput="handleSearch()">
+    <select id="sort-select" onchange="handleSort()" style="border-radius:12px; border:1px solid #ddd; padding:0 10px;">
         <option value="default">↕</option>
         <option value="low">$-$$</option>
         <option value="high">$$-$</option>
@@ -146,33 +129,27 @@
 
 <div id="prodModal" class="modal" onclick="if(event.target==this)closeM('prodModal')">
     <div class="modal-content">
-        <div class="slider-container"><img id="m-img" src=""></div>
-        <h2 id="m-title" style="margin:0;"></h2>
-        <b id="m-price" style="font-size:22px; color:var(--dark);"></b>
-        <div id="m-sizes" style="display:flex; gap:10px; margin:15px 0;"></div>
-        <p id="m-desc" style="color:#666; font-size:14px;"></p>
+        <img id="m-img" src="" style="width:100%; border-radius:15px; height:250px; object-fit:contain; background:#f0f0f0;">
+        <h2 id="m-title" style="margin:15px 0 5px 0;"></h2>
+        <b id="m-price" style="font-size:22px;"></b>
+        <p style="margin:10px 0 5px 0; font-weight:bold;">Оберіть розмір:</p>
+        <div id="m-sizes" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
         <button class="action-btn" onclick="addToCart()">ДОДАТИ В КОШИК</button>
     </div>
 </div>
 
-<div id="customAlert" class="modal" style="z-index: 5000;">
-    <div class="modal-content" style="text-align: center; max-width: 300px;">
-        <i class="fas fa-check-circle" style="font-size: 40px; color: var(--main);"></i>
-        <p id="alerttext" style="font-weight: bold; margin-top: 15px;"></p>
-        <button class="action-btn" onclick="closeM('customAlert')">OK</button>
+<div id="customAlert" class="modal" style="z-index:9999;">
+    <div class="modal-content" style="text-align:center; max-width:300px;">
+        <div id="alert-icon"></div>
+        <p id="alert-text" style="font-weight:bold; margin:15px 0;"></p>
+        <button class="action-btn" onclick="closeM('customAlert')">ЗРОЗУМІЛО</button>
     </div>
 </div>
 
 <script>
     const api = window.location.origin + "/api";
     let allP = [], cart = [], favs = [], curP = null, selectedSize = null;
-    let currentLang = localStorage.getItem('selected_lang') || 'UA';
-
-    const langDict = {
-        UA: { home: "Головна", ai_stylist: "AI Стиліст", bonus_game: "Бонусна гра", favorites: "Обране", profile: "Профіль", search: "Пошук...", added: "Додано!" },
-        EN: { home: "Home", ai_stylist: "AI Stylist", bonus_game: "Bonus Game", favorites: "Favorites", profile: "Profile", search: "Search...", added: "Added!" },
-        DE: { home: "Startseite", ai_stylist: "AI Stylist", bonus_game: "Bonusspiel", favorites: "Favoriten", profile: "Profil", search: "Suche...", added: "Hinzugefügt!" }
-    };
+    let gameActive = false, spawnInterval;
 
     async function load() {
         try {
@@ -182,13 +159,12 @@
             favs = JSON.parse(localStorage.getItem('favs')) || [];
             render(allP);
             updateBadges();
-            applyLang();
-        } catch(e) { console.error("Data error"); }
+        } catch(e) { console.log("Помилка завантаження"); }
     }
 
     function render(data) {
         const grid = document.getElementById('products-grid');
-        grid.innerHTML = data.map((p, i) => {
+        grid.innerHTML = data.map(p => {
             const isFav = favs.some(f => f.name === p.name);
             return `
                 <div class="card" onclick="openP('${p.name}')">
@@ -197,53 +173,22 @@
                     </button>
                     <img src="${p.images[0]}">
                     <div style="padding:15px;">
-                        <h3 style="font-size:14px; margin:0 0 5px 0; height:34px; overflow:hidden;">${p.name}</h3>
+                        <h3 style="font-size:14px; margin:0; height:34px; overflow:hidden;">${p.name}</h3>
                         <b>${p.price} ₴</b>
                     </div>
                 </div>`;
         }).join('');
     }
 
-    // COUNT UP ANIMATION
-    function animateValue(obj, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = (progress * (end - start) + start).toFixed(2) + " ₴";
-            if (progress < 1) window.requestAnimationFrame(step);
-        };
-        window.requestAnimationFrame(step);
-    }
-
-    // INTERNAL ALERT
-    function showAlert(text) {
-        document.getElementById('alerttext').innerText = text;
+    // Внутрішні сповіщення (замість Google Alert)
+    function showAlert(text, type = 'success') {
+        document.getElementById('alert-text').innerText = text;
+        document.getElementById('alert-icon').innerHTML = type === 'success' 
+            ? '<i class="fas fa-check-circle" style="font-size:40px; color:var(--main)"></i>' 
+            : '<i class="fas fa-exclamation-circle" style="font-size:40px; color:#ff4747"></i>';
         openM('customAlert');
     }
 
-    // SEARCH & SORT & FILTER
-    function handleSearch() {
-        const q = document.getElementById('site-search').value.toLowerCase();
-        const filtered = allP.filter(p => p.name.toLowerCase().includes(q));
-        render(filtered);
-    }
-
-    function handleSort() {
-        const mode = document.getElementById('sort-select').value;
-        let data = [...allP];
-        if(mode === 'low') data.sort((a,b) => a.price - b.price);
-        if(mode === 'high') data.sort((a,b) => b.price - a.price);
-        render(data);
-    }
-
-    function filterBy(cat, el) {
-        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-        el.classList.add('active');
-        render(cat === 'Всі' ? allP : allP.filter(p => p.cat === cat));
-    }
-
-    // FAVORITES
     function toggleFav(name) {
         const idx = favs.findIndex(f => f.name === name);
         if(idx > -1) favs.splice(idx, 1);
@@ -253,14 +198,25 @@
         handleSearch();
     }
 
-    // CART LOGIC
     function addToCart() {
-        if(curP.sizes && !selectedSize) return showAlert("Оберіть розмір!");
+        // 1. ПЕРЕВІРКА НА АКАУНТ
+        if (!localStorage.getItem('user')) {
+            closeM('prodModal');
+            showAlert("Будь ласка, увійдіть в акаунт, щоб купувати!", "error");
+            setTimeout(openProfile, 1500);
+            return;
+        }
+        // 2. ПЕРЕВІРКА НА РОЗМІР
+        if (curP.sizes && curP.sizes.length > 0 && !selectedSize) {
+            showAlert("Ви не обрали розмір!", "error");
+            return;
+        }
+
         cart.push({...curP, selSize: selectedSize, cartId: Date.now()});
         localStorage.setItem('cart', JSON.stringify(cart));
         updateBadges();
         closeM('prodModal');
-        showAlert(langDict[currentLang].added);
+        showAlert("Товар додано в кошик!");
     }
 
     function removeCartItem(id) {
@@ -275,7 +231,95 @@
         document.getElementById('fav-count').innerText = favs.length;
     }
 
-    // OPEN SECTIONS
+    // БОНУСНА ГРА (Полагоджена)
+    function openGame() {
+        if (!localStorage.getItem('user')) { showAlert("Увійдіть в акаунт для гри!", "error"); return; }
+        const title = document.getElementById('info-title');
+        const body = document.getElementById('info-body');
+        title.innerText = "LUNXET RUN (Збирай знижки)";
+        body.innerHTML = `
+            <div style="margin-bottom:10px;">Бонуси: <b id="game-score">0.00</b> ₴</div>
+            <div id="game-canvas"></div>
+            <p style="font-size:12px; color:#888; margin-top:10px;">Натискай на 🏷️, уникай 💣</p>
+            <button class="action-btn" onclick="stopGame()">ЗБЕРЕГТИ РЕЗУЛЬТАТ</button>
+        `;
+        openM('infoModal');
+        startGame();
+    }
+
+    function startGame() {
+        gameActive = true;
+        const canvas = document.getElementById('game-canvas');
+        spawnInterval = setInterval(() => {
+            if(!gameActive) return;
+            const item = document.createElement('div');
+            const isGood = Math.random() > 0.3;
+            item.className = 'game-item';
+            item.innerText = isGood ? '🏷️' : '💣';
+            item.style.left = Math.random() * (canvas.offsetWidth - 30) + 'px';
+            item.style.top = '-40px';
+            
+            item.onclick = (e) => {
+                e.stopPropagation();
+                let current = parseFloat(localStorage.getItem('user_bonuses')) || 0;
+                let change = isGood ? 0.50 : -1.00;
+                let newVal = Math.max(0, current + change);
+                localStorage.setItem('user_bonuses', newVal);
+                document.getElementById('game-score').innerText = newVal.toFixed(2);
+                item.remove();
+            };
+
+            canvas.appendChild(item);
+            let pos = -40;
+            const fall = setInterval(() => {
+                pos += 3;
+                item.style.top = pos + 'px';
+                if(pos > 300 || !gameActive) { clearInterval(fall); item.remove(); }
+            }, 20);
+        }, 600);
+    }
+
+    function stopGame() { gameActive = false; clearInterval(spawnInterval); showAlert("Ваші бонуси збережено!"); closeM('infoModal'); }
+
+    // ПОШУК ТА СОРТУВАННЯ
+    function handleSearch() {
+        const q = document.getElementById('site-search').value.toLowerCase();
+        render(allP.filter(p => p.name.toLowerCase().includes(q)));
+    }
+
+    function handleSort() {
+        const val = document.getElementById('sort-select').value;
+        let data = [...allP];
+        if(val === 'low') data.sort((a,b) => a.price - b.price);
+        if(val === 'high') data.sort((a,b) => b.price - a.price);
+        render(data);
+    }
+
+    function filterBy(cat, el) {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+        render(cat === 'Всі' ? allP : allP.filter(p => p.cat === cat));
+    }
+
+    function openP(name) {
+        curP = allP.find(p => p.name === name);
+        selectedSize = null;
+        document.getElementById('m-img').src = curP.images[0];
+        document.getElementById('m-title').innerText = curP.name;
+        document.getElementById('m-price').innerText = curP.price + " ₴";
+        const container = document.getElementById('m-sizes');
+        container.innerHTML = curP.sizes ? curP.sizes.map(s => `
+            <div class="size-box" onclick="selectedSize='${s}'; updateSizeUI(this)" 
+                 style="border:1px solid #ddd; padding:8px 15px; border-radius:8px; cursor:pointer;">${s}</div>
+        `).join('') : "Універсальний";
+        openM('prodModal');
+    }
+
+    function updateSizeUI(el) {
+        document.querySelectorAll('.size-box').forEach(b => b.style.background = 'white');
+        el.style.background = 'var(--main)';
+    }
+
     function openSection(type) {
         const title = document.getElementById('info-title');
         const body = document.getElementById('info-body');
@@ -284,82 +328,43 @@
             body.innerHTML = cart.length ? cart.map(i => `
                 <div class="cart-item">
                     <img src="${i.images[0]}">
-                    <div class="cart-item-info">
-                        <b>${i.name}</b>
-                        <small>Розмір: ${i.selSize || 'Універс.'} | ${i.price} ₴</small>
-                    </div>
-                    <i class="fas fa-trash remove-item" onclick="removeCartItem(${i.cartId})"></i>
+                    <div style="flex:1"><b>${i.name}</b><br><small>${i.selSize || ''} | ${i.price} ₴</small></div>
+                    <i class="fas fa-trash" style="color:red; cursor:pointer;" onclick="removeCartItem(${i.cartId})"></i>
                 </div>
-            `).join('') + `<button class="action-btn">ОФОРМИТИ ЗАМОВЛЕННЯ</button>` : "Ваш кошик порожній";
+            `).join('') + `<button class="action-btn">ОФОРМИТИ</button>` : "Кошик порожній";
         } else if(type === 'favs') {
             title.innerText = "Обране";
             body.innerHTML = favs.length ? `<div class="grid" style="padding:0">` + favs.map(p => `
                 <div class="card" onclick="closeM('infoModal'); openP('${p.name}')">
-                    <img src="${p.images[0]}" style="height:120px">
-                    <div style="padding:10px; font-size:12px;">${p.name}</div>
-                </div>`).join('') + `</div>` : "Тут поки нічого немає";
+                    <img src="${p.images[0]}" style="height:100px">
+                    <div style="padding:10px; font-size:11px;">${p.name}</div>
+                </div>`).join('') + `</div>` : "Порожньо";
         }
         openM('infoModal');
     }
 
     function openProfile() {
-        const user = localStorage.getItem('user') || "Гість";
-        const bonusVal = parseFloat(localStorage.getItem('user_bonuses')) || 0;
-        document.getElementById('info-title').innerText = "Мій Профіль";
-        document.getElementById('info-body').innerHTML = `
-            <div style="text-align:center; padding:20px;">
-                <i class="fas fa-user-circle" style="font-size:60px; color:#ddd;"></i>
-                <h3>${user}</h3>
-                <div style="background:#f9f9f9; padding:15px; border-radius:15px;">
-                    <p style="margin:0; font-size:12px; color:#888;">Ваші бонуси:</p>
-                    <h2 class="count-up" id="bonus-display">0.00 ₴</h2>
-                </div>
-                <button class="action-btn" style="background:#eee; color:red;" onclick="localStorage.clear(); location.reload();">ВИЙТИ</button>
-            </div>`;
+        const u = localStorage.getItem('user');
+        const title = document.getElementById('info-title');
+        const body = document.getElementById('info-body');
+        title.innerText = "Акаунт";
+        if(u) {
+            const b = parseFloat(localStorage.getItem('user_bonuses')) || 0;
+            body.innerHTML = `<h3>Привіт, ${u}!</h3><p>Бонуси: <b>${b.toFixed(2)} ₴</b></p>
+            <button class="action-btn" style="background:#eee; color:red;" onclick="localStorage.removeItem('user'); location.reload();">ВИЙТИ</button>`;
+        } else {
+            body.innerHTML = `<input type="text" id="login-in" class="search-bar" placeholder="Логін" style="width:100%; margin-bottom:10px;">
+            <button class="action-btn" onclick="localStorage.setItem('user', document.getElementById('login-in').value); location.reload();">УВІЙТИ</button>`;
+        }
         openM('infoModal');
-        setTimeout(() => animateValue(document.getElementById('bonus-display'), 0, bonusVal, 1000), 100);
-    }
-
-    function openAI() {
-        document.getElementById('info-title').innerText = "AI Стиліст";
-        document.getElementById('info-body').innerHTML = "<p>Надішліть фото свого гардеробу, і наш AI підбере ідеальний образ.</p><input type='file' class='action-btn' style='background:#f0f0f0'><button class='action-btn'>Аналізувати</button>";
-        openM('infoModal');
-    }
-
-    function openGame() {
-        document.getElementById('info-title').innerText = "LUNXET RUN";
-        document.getElementById('info-body').innerHTML = "<div style='background:#000; height:200px; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:15px;'>Запуск гри...</div><button class='action-btn'>ГРАТИ</button>";
-        openM('infoModal');
-    }
-
-    // SYSTEM
-    function openP(name) {
-        curP = allP.find(p => p.name === name);
-        document.getElementById('m-img').src = curP.images[0];
-        document.getElementById('m-title').innerText = curP.name;
-        document.getElementById('m-price').innerText = curP.price + " ₴";
-        document.getElementById('m-desc').innerText = curP.desc || "Опис товару скоро буде доступний.";
-        document.getElementById('m-sizes').innerHTML = curP.sizes ? curP.sizes.map(s => `<div onclick="selectedSize='${s}'; Array.from(this.parentNode.children).forEach(c=>c.style.background='white'); this.style.background='var(--main)'" style="border:1px solid #ddd; padding:8px 12px; border-radius:10px; cursor:pointer;">${s}</div>`).join('') : "";
-        openM('prodModal');
-    }
-
-    function toggleLang() { document.getElementById('lang-list').style.display = 'block'; }
-    function setLang(l) { localStorage.setItem('selected_lang', l); location.reload(); }
-    function applyLang() {
-        document.getElementById('cur-lang').innerText = currentLang;
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            const key = el.getAttribute('data-lang');
-            el.innerText = langDict[currentLang][key];
-        });
-        document.getElementById('site-search').placeholder = langDict[currentLang].search;
     }
 
     function openM(id) { document.getElementById(id).style.display = 'flex'; }
     function closeM(id) { document.getElementById(id).style.display = 'none'; }
     function toggleMenu() { document.getElementById('sidebar').classList.toggle('open'); document.getElementById('overlay').style.display = document.getElementById('sidebar').classList.contains('open') ? 'block' : 'none'; }
+    function setLang(l) { document.getElementById('cur-lang').innerText = l; document.getElementById('lang-list').style.display = 'none'; }
 
     window.onload = load;
-    document.addEventListener('click', (e) => { if(!e.target.closest('.lang-box')) document.getElementById('lang-list').style.display = 'none'; });
 </script>
 
 </body>
